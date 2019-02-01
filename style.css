@@ -1,0 +1,54 @@
+body {
+    background-image: url(img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ddd;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.container {
+    background-image: url(img/bg_blur.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ddd;
+    padding: 10px 50px;
+    margin-top: 50px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+form button, form input[type='file'] {
+    color: #ddd;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 5px 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+form input[type='text'], form input[type='password'], form select{
+    color: #ddd;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 2px 5px;
+    transition: 0.25s ease;
+    margin-bottom: 4px;
+    width: 200px;
+}
+
+form button:hover {
+    background-color: rgba(255,255,255,0.75);
+/*    border: 1px solid rgba(255,255,255,0.5);*/
+    box-shadow: 0 0 50px rgba(255,255,255,0.25);
+    color: #333;
+}
+
+hr {
+    border: 1px solid #ddd;
+    border-bottom: none;
+}

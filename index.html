@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twilight dumper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/" method="post">
+            <input type="hidden" name="action" value="change">
+            <label>username
+                <br>
+                <input type="text" name="username" value="<?php echo $_COOKIE['username']; ?>">
+            </label>
+            <br>
+            
+            <label>password
+                <br>
+                <input type="password" name="password" value="<?php echo $_COOKIE['password']; ?>">
+            </label>
+            <br>
+            
+            <label>database
+                <br>
+                <input type="text" name="database" value="<?php echo $_COOKIE['database']; ?>">
+            </label>
+            <br>
+            
+            <button type="submit">Change</button>
+        </form>
+        
+        <h2>DB: <?php echo $database; ?></h2>
+        <?php if($error): ?>
+            <p>Connection error.</p>
+        <?php endif; ?>
+        <?php if($rows>0): ?>
+            <p>Tables: <?php echo $tables; ?></p>
+            <p>There are <strong><?php echo $rows; ?> rows</strong> to create SQL dump</p>
+        <?php endif; ?>
+        
+        <?php if(!$error): ?>
+        
+            <form action="/" method="post">
+                <input type="hidden" name="action" value="save">
+                <button type="submit">Save</button>
+            </form>
+
+            <hr>
+
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="upload">
+                <input type="file" name="dump" required>
+                <br>
+                <button type="submit">Load</button>
+            </form>
+        
+        <?php endif; ?>
+    </div>
+</body>
+</html>
